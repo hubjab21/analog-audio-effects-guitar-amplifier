@@ -1,21 +1,29 @@
 # 🎛️ Analog Audio Circuits – LTspice & Hardware
 
-This project presents analog audio circuits simulated in **LTspice XVII** and verified using real measurements.
+This project presents analog audio circuits simulated in **LTspice XVII** and verified using real hardware measurements.
 
 ---
 
 ## ⚠️ LTspice Version
 
-Simulations were performed in:
+Simulations were performed using:
 
 * ✅ LTspice XVII (working)
 * ❌ LTspice 26 – issues with `.wav` generation
 
-Downloads (31.03.2026):
+---
 
-* XVII: https://ltspice.analog.com/software/LTspice64.exe
-* 26: https://ltspice.analog.com/software/LTspice64.msi
-* https://www.analog.com/en/resources/design-tools-and-calculators/ltspice-simulator.html
+## 🎨 Plot Colors
+
+In all LTspice plots:
+
+* 🟢 **Green = Input signal**
+* 🔴 **Red = Output signal**
+
+In oscilloscope measurements:
+
+* 🟡 Input (yellow)
+* 🔵 Output (blue)
 
 ---
 
@@ -24,13 +32,7 @@ Downloads (31.03.2026):
 ![schematic](images/LTspice/high_pass_filter_schematic.png)
 ![response](images/LTspice/high_pass_filter_response.png)
 
-A simple RC high-pass filter.
-
-* Removes low frequencies
-* Cutoff frequency ≈ 4 Hz
-* Expected -3 dB point observed
-
-The simulation matches theoretical behavior.
+Simple RC filter that removes low frequencies and passes high frequencies.
 
 ---
 
@@ -39,13 +41,7 @@ The simulation matches theoretical behavior.
 ![schematic](images/LTspice/low_pass_filter_schematic.png)
 ![response](images/LTspice/low_pass_filter_response.png)
 
-RC low-pass filter with reversed configuration.
-
-* Passes low frequencies
-* Attenuates high frequencies
-* Same cutoff as high-pass
-
-Response is complementary to the high-pass filter.
+Simple RC filter that passes low frequencies and attenuates high frequencies.
 
 ---
 
@@ -59,13 +55,17 @@ Response is complementary to the high-pass filter.
 ![scope](images/hardware-oscilloscope/single_transistor_voltage_amplifier.png)
 ![fft](images/hardware-oscilloscope/single_transistor_voltage_amplifier_fft.png)
 
-Common-emitter amplifier using BC337.
+Common-emitter amplifier (BC337).
 
-* Gain ≈ 3×
-* Phase inversion (180°)
-* Visible distortion for larger signals
+* voltage gain
+* phase inversion
+* distortion for higher amplitudes
 
-FFT confirms harmonic distortion.
+Real hardware:
+
+* built first on breadboard, then soldered
+* gain lower than simulation
+* clipping appears for larger signals
 
 ---
 
@@ -78,22 +78,17 @@ FFT confirms harmonic distortion.
 ![scope](images/hardware-oscilloscope/single_transistor_voltage_amplifier_negative_feedback.png)
 ![fft](images/hardware-oscilloscope/single_transistor_voltage_amplifier_negative_feedback_fft.png)
 
-Modified amplifier with feedback.
+Amplifier with feedback:
 
-* Lower gain
-* Wider bandwidth
-* Reduced noise
+* lower gain
+* better stability
+* wider bandwidth
 
-However:
-
-* THD increased in simulation (~3.3%)
-* Better behavior for real audio
-
-This discrepancy may result from LTspice audio modeling limitations.
+Simulation and real results differ slightly → likely due to model simplifications.
 
 ---
 
-# 🔧 Operational Amplifier (LM741)
+# 🔧 Operational Amplifier (LM741 / UA741)
 
 ![schematic](images/LTspice/lm741_amplifier_schematic.png)
 
@@ -101,36 +96,16 @@ This discrepancy may result from LTspice audio modeling limitations.
 ![scope](images/hardware-oscilloscope/ua741_amplifier.png)
 ![fft](images/hardware-oscilloscope/ua741_amplifier_fft.png)
 
-Inverting amplifier using LM741.
+* Simulation: **LM741**
+* Hardware: **UA741 (similar chip)**
 
-* Gain ≈ -3.4
-* Phase inversion
-* Low distortion for small signals
+⚠️ UA741 model did not work correctly in LTspice → LM741 used instead
 
-⚠️ Observation:
+Observations:
 
-The frequency response was almost identical to the input signal.
-
-Possible reasons:
-
-* incorrect or simplified model
-* limitations of simulation
-
----
-
-## 📦 Model Information
-
-Used model:
-
-* https://www.ti.com/product/LM741
-* https://www.ti.com/lit/zip/snom211
-
-⚠️ UA741 model (not working):
-
-* https://www.ti.com/product/UA741
-* https://www.ti.com/lit/zip/sloj138
-
-LM741 was used because UA741 model failed.
+* stable amplification
+* low distortion
+* best agreement between simulation and hardware
 
 ---
 
@@ -143,11 +118,11 @@ LM741 was used because UA741 model failed.
 ![scope](images/hardware-oscilloscope/fuzz_effect.png)
 ![fft](images/hardware-oscilloscope/fuzz_effect_fft.png)
 
-* Strong nonlinear distortion
-* Diode clipping
-* Very high THD (>200%)
+* strong nonlinear distortion
+* diode clipping
+* very high harmonic content
 
-Expected behavior for fuzz effect.
+Real circuit behaves similarly to simulation.
 
 ---
 
@@ -156,19 +131,29 @@ Expected behavior for fuzz effect.
 ![schematic](images/LTspice/noise_gate_schematic.png)
 ![response](images/LTspice/noise_gate_response.png)
 
-* Reduces noise
-* Output follows input
-* Slight attenuation
+* suppresses noise
+* reduces low-level signals
+* keeps main signal shape
 
 ---
 
-# 🧠 Conclusions
+# 🔬 Conclusions
 
-* Filters behave exactly as theory predicts
-* Transistor amplifiers show realistic distortion
-* Feedback improves bandwidth but affects THD
-* Op-amp results may be affected by model inaccuracies
-* Audio effects behave as expected
+* filters behave exactly as expected
+* transistor amplifiers differ from simulation
+* feedback improves stability
+* op-amp gives most predictable results
+* real measurements are essential
+
+---
+
+# 🚀 Future Development
+
+* design circuits in **KiCad**
+* create **dedicated PCB boards** (instead of universal)
+* improve build quality
+* perform more real measurements
+* extend audio effects
 
 ---
 
