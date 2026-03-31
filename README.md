@@ -56,19 +56,32 @@ Common-emitter amplifier (BC337).
 * phase inversion
 * distortion for higher amplitudes
 
-### 🔧 Physical circuit (hardware)
+### 🔌 Breadboard circuit (prototype)
 
-![hardware](images/hardware/single_transistor_voltage_amplifier.png)
 ![breadboard](images/hardware/single_transistor_voltage_amplifier_breadboard.png)
 
-The circuit was first designed and simulated in LTspice.
-Then it was **tested on a breadboard**, where initial verification and debugging were performed.
+The circuit was first implemented on a **breadboard**.  
+A signal generator was used as the input source, allowing initial verification and debugging of the circuit.
 
-After testing:
+At this stage:
 
-* corrections were introduced in LTspice
-* the circuit was refined
-* and finally **soldered on a universal PCB**
+- basic functionality was tested  
+- wiring and connections were verified  
+- issues such as poor contacts were identified and fixed  
+
+---
+
+### 🔧 Physical circuit (final hardware)
+
+![hardware](images/hardware/single_transistor_voltage_amplifier.png)
+
+After successful testing:
+
+- corrections were introduced in LTspice  
+- the design was refined  
+- and the circuit was **soldered on a universal PCB**
+
+This workflow (LTspice → breadboard → corrections → PCB) was used for the other circuits as well, even if additional breadboard photos are not included.
 
 ### 📊 Oscilloscope measurements
 
