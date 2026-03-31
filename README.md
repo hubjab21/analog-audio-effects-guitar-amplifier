@@ -50,22 +50,34 @@ Simple RC filter that passes low frequencies and attenuates high frequencies.
 ![schematic](images/LTspice/single_transistor_voltage_amplifier_schematic.png)
 ![response](images/LTspice/single_transistor_voltage_amplifier_response.png)
 
-![hardware](images/hardware/single_transistor_voltage_amplifier.png)
-![breadboard](images/hardware/single_transistor_voltage_amplifier_breadboard.png)
-![scope](images/hardware-oscilloscope/single_transistor_voltage_amplifier.png)
-![fft](images/hardware-oscilloscope/single_transistor_voltage_amplifier_fft.png)
-
 Common-emitter amplifier (BC337).
 
 * voltage gain
 * phase inversion
 * distortion for higher amplitudes
 
-Real hardware:
+### 🔧 Physical circuit (hardware)
 
-* built first on breadboard, then soldered
-* gain lower than simulation
-* clipping appears for larger signals
+![hardware](images/hardware/single_transistor_voltage_amplifier.png)
+![breadboard](images/hardware/single_transistor_voltage_amplifier_breadboard.png)
+
+The circuit was first designed and simulated in LTspice.
+Then it was **tested on a breadboard**, where initial verification and debugging were performed.
+
+After testing:
+
+* corrections were introduced in LTspice
+* the circuit was refined
+* and finally **soldered on a universal PCB**
+
+### 📊 Oscilloscope measurements
+
+![scope](images/hardware-oscilloscope/single_transistor_voltage_amplifier.png)
+![fft](images/hardware-oscilloscope/single_transistor_voltage_amplifier_fft.png)
+
+* real gain lower than simulation
+* clipping appears at higher amplitudes
+* harmonic distortion visible in FFT
 
 ---
 
@@ -74,15 +86,27 @@ Real hardware:
 ![schematic](images/LTspice/single_transistor_voltage_amplifier_negative_feedback_schematic.png)
 ![response](images/LTspice/single_transistor_voltage_amplifier_negative_feedback_response.png)
 
-![hardware](images/hardware/single_transistor_voltage_amplifier_negative_feedback.png)
-![scope](images/hardware-oscilloscope/single_transistor_voltage_amplifier_negative_feedback.png)
-![fft](images/hardware-oscilloscope/single_transistor_voltage_amplifier_negative_feedback_fft.png)
-
 Amplifier with feedback:
 
 * lower gain
 * better stability
 * wider bandwidth
+
+### 🔧 Physical circuit (hardware)
+
+![hardware](images/hardware/single_transistor_voltage_amplifier_negative_feedback.png)
+
+The same workflow was used:
+
+* LTspice simulation
+* breadboard testing
+* corrections in simulation
+* final soldered version
+
+### 📊 Oscilloscope measurements
+
+![scope](images/hardware-oscilloscope/single_transistor_voltage_amplifier_negative_feedback.png)
+![fft](images/hardware-oscilloscope/single_transistor_voltage_amplifier_negative_feedback_fft.png)
 
 Simulation and real results differ slightly → likely due to model simplifications.
 
@@ -92,16 +116,21 @@ Simulation and real results differ slightly → likely due to model simplificati
 
 ![schematic](images/LTspice/lm741_amplifier_schematic.png)
 
-![hardware](images/hardware/UA741_amplifier.png)
-![scope](images/hardware-oscilloscope/ua741_amplifier.png)
-![fft](images/hardware-oscilloscope/ua741_amplifier_fft.png)
-
 * Simulation: **LM741**
 * Hardware: **UA741 (similar chip)**
 
 ⚠️ UA741 model did not work correctly in LTspice → LM741 used instead
 
-Observations:
+### 🔧 Physical circuit (hardware)
+
+![hardware](images/hardware/UA741_amplifier.png)
+
+This circuit was implemented physically using UA741 after simulation.
+
+### 📊 Oscilloscope measurements
+
+![scope](images/hardware-oscilloscope/ua741_amplifier.png)
+![fft](images/hardware-oscilloscope/ua741_amplifier_fft.png)
 
 * stable amplification
 * low distortion
@@ -114,13 +143,20 @@ Observations:
 ![schematic](images/LTspice/fuzz_effect_schematic.png)
 ![response](images/LTspice/fuzz_effect_response.png)
 
-![hardware](images/hardware/fuzz_effect.png)
-![scope](images/hardware-oscilloscope/fuzz_effect.png)
-![fft](images/hardware-oscilloscope/fuzz_effect_fft.png)
-
 * strong nonlinear distortion
 * diode clipping
 * very high harmonic content
+
+### 🔧 Physical circuit (hardware)
+
+![hardware](images/hardware/fuzz_effect.png)
+
+Circuit implemented after LTspice validation and tested as a standalone audio effect.
+
+### 📊 Oscilloscope measurements
+
+![scope](images/hardware-oscilloscope/fuzz_effect.png)
+![fft](images/hardware-oscilloscope/fuzz_effect_fft.png)
 
 Real circuit behaves similarly to simulation.
 
