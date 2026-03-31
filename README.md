@@ -1,209 +1,178 @@
-# 🎛️ Analog Audio Circuits – LTspice & Hardware Implementation
+# 🎛️ Analog Audio Circuits – LTspice & Hardware
 
-This project presents a set of basic analog audio circuits including filters, amplifiers, and audio effects.
-All circuits were simulated in **LTspice XVII** and later verified using real hardware measurements.
-
-The work is based on my engineering thesis:
-📄 *"Guitar amplifier with acoustic effects"* 
+This project presents analog audio circuits simulated in **LTspice XVII** and verified using real measurements.
 
 ---
 
-## ⚠️ LTspice Version Note
+## ⚠️ LTspice Version
 
-All simulations were performed using:
+Simulations were performed in:
 
-* ✅ **LTspice XVII (working version)**
-* ❌ LTspice 26 – caused issues with audio (.wav) file generation
+* ✅ LTspice XVII (working)
+* ❌ LTspice 26 – issues with `.wav` generation
 
-Downloads (valid as of 31.03.2026):
+Downloads (31.03.2026):
 
-* LTspice XVII: https://ltspice.analog.com/software/LTspice64.exe
-* LTspice 26: https://ltspice.analog.com/software/LTspice64.msi
-* Official page: https://www.analog.com/en/resources/design-tools-and-calculators/ltspice-simulator.html
-
----
-
-## 📁 Project Structure
-
-```text
-images/
-├── hardware/                # real circuits (breadboard, PCB)
-├── hardware-oscilloscope/   # oscilloscope measurements (time & FFT)
-└── LTspice/                 # schematics and simulation results
-
-LTspice/                     # simulation files (.asc, .wav)
-input.wav                    # base input signal
-```
+* XVII: https://ltspice.analog.com/software/LTspice64.exe
+* 26: https://ltspice.analog.com/software/LTspice64.msi
+* https://www.analog.com/en/resources/design-tools-and-calculators/ltspice-simulator.html
 
 ---
 
-# 🔍 Circuits Overview
+# 🔼 High-Pass Filter
 
----
+![schematic](images/LTspice/high_pass_filter_schematic.png)
+![response](images/LTspice/high_pass_filter_response.png)
 
-## 🔼 High-Pass Filter
+A simple RC high-pass filter.
 
-![Image](https://i.sstatic.net/lgDiRE9F.png)
-
-![Image](https://i.sstatic.net/hsO2w.png)
-
-A simple passive RC high-pass filter was implemented.
-
-* Removes low-frequency components
+* Removes low frequencies
 * Cutoff frequency ≈ 4 Hz
-* Output amplitude drops by 3 dB at cutoff
+* Expected -3 dB point observed
 
-Simulation results confirm expected behavior — attenuation of low frequencies and preservation of higher frequencies.
+The simulation matches theoretical behavior.
 
 ---
 
-## 🔽 Low-Pass Filter
+# 🔽 Low-Pass Filter
 
-![Image](https://i.sstatic.net/cSViA.png)
+![schematic](images/LTspice/low_pass_filter_schematic.png)
+![response](images/LTspice/low_pass_filter_response.png)
 
-![Image](https://sc-b.digikeyassets.com/-/media/MakerIO/Images/Tutorials/2024/How%20to%20Simulate%20an%20RC%20Low-Pass%20Filter%20in%20LTspice%20and%20Analyze%20Frequency%20Response/fig_a.jpg?la=en\&ts=3a0201f3-d571-42c2-8e86-c6fd2bef75c8)
-
-The circuit is identical to the high-pass filter with swapped components.
+RC low-pass filter with reversed configuration.
 
 * Passes low frequencies
 * Attenuates high frequencies
-* Same cutoff frequency (~4 Hz)
+* Same cutoff as high-pass
 
-The frequency response is inverted compared to the high-pass filter, exactly as expected from theory.
-
----
-
-## 🔊 Single Transistor Voltage Amplifier
-
-![Image](https://www.researchgate.net/profile/Antoniu-Miclaus/publication/381297471/figure/fig2/AS%3A11431281250775762%401718016196597/Common-emitter-tuned-amplifier-breadboard-connections.png)
-
-![Image](https://www.allaboutcircuits.com/uploads/articles/undistorted-output-current.jpg)
-
-A basic common-emitter amplifier using a **BC337 transistor**.
-
-* Voltage gain ≈ 3×
-* Phase shift: 180°
-* Moderate distortion at higher amplitudes
-
-The circuit amplifies small signals effectively but introduces distortion when the input amplitude is too large.
-FFT analysis shows harmonic distortion, especially for complex audio signals.
+Response is complementary to the high-pass filter.
 
 ---
 
-## 🔊 Amplifier with Negative Feedback
+# 🔊 Single Transistor Voltage Amplifier
 
-![Image](https://ecstudiosystems.com/discover/textbooks/basic-electronics/amplifiers/images/transistor-amplifier-with-feedback.jpg)
+![schematic](images/LTspice/single_transistor_voltage_amplifier_schematic.png)
+![response](images/LTspice/single_transistor_voltage_amplifier_response.png)
 
-![Image](https://i.sstatic.net/qsi6x.jpg)
+![hardware](images/hardware/single_transistor_voltage_amplifier.png)
+![breadboard](images/hardware/single_transistor_voltage_amplifier_breadboard.png)
+![scope](images/hardware-oscilloscope/single_transistor_voltage_amplifier.png)
+![fft](images/hardware-oscilloscope/single_transistor_voltage_amplifier_fft.png)
 
-Negative feedback was added to improve performance.
+Common-emitter amplifier using BC337.
 
-* Lower gain (~2.5×)
+* Gain ≈ 3×
+* Phase inversion (180°)
+* Visible distortion for larger signals
+
+FFT confirms harmonic distortion.
+
+---
+
+# 🔊 Amplifier with Negative Feedback
+
+![schematic](images/LTspice/single_transistor_voltage_amplifier_negative_feedback_schematic.png)
+![response](images/LTspice/single_transistor_voltage_amplifier_negative_feedback_response.png)
+
+![hardware](images/hardware/single_transistor_voltage_amplifier_negative_feedback.png)
+![scope](images/hardware-oscilloscope/single_transistor_voltage_amplifier_negative_feedback.png)
+![fft](images/hardware-oscilloscope/single_transistor_voltage_amplifier_negative_feedback_fft.png)
+
+Modified amplifier with feedback.
+
+* Lower gain
 * Wider bandwidth
 * Reduced noise
 
-However, simulation results showed:
+However:
 
-* Higher THD (~3.3%) for sine signals
-* Better behavior for real audio signals
+* THD increased in simulation (~3.3%)
+* Better behavior for real audio
 
-This may be caused by **LTspice simplifications in audio modeling**, as also observed during analysis in the thesis.
+This discrepancy may result from LTspice audio modeling limitations.
 
 ---
 
-## 🔧 Operational Amplifier (LM741)
+# 🔧 Operational Amplifier (LM741)
 
-![Image](https://www.allaboutcircuits.com/uploads/articles/741schem.png)
+![schematic](images/LTspice/lm741_amplifier_schematic.png)
 
-![Image](https://i.sstatic.net/M1toq.png)
+![hardware](images/hardware/UA741_amplifier.png)
+![scope](images/hardware-oscilloscope/ua741_amplifier.png)
+![fft](images/hardware-oscilloscope/ua741_amplifier_fft.png)
 
-An inverting amplifier based on **LM741**.
+Inverting amplifier using LM741.
 
 * Gain ≈ -3.4
-* Phase shift: 180°
-* Very low distortion for small signals (~0.07% THD)
+* Phase inversion
+* Low distortion for small signals
 
-⚠️ Important observation:
+⚠️ Observation:
 
-The frequency response plots were **almost identical to the input signal**, which may indicate:
+The frequency response was almost identical to the input signal.
 
-* incorrect or simplified model behavior
-* limitations of the simulation model
+Possible reasons:
 
----
-
-### 📦 Model Information
-
-The LM741 model used:
-
-* Source: https://www.ti.com/product/LM741
-* Download (working): https://www.ti.com/lit/zip/snom211
-
-⚠️ The **UA741 model did not work properly**:
-
-* Page: https://www.ti.com/product/UA741
-* Model: https://www.ti.com/lit/zip/sloj138
-
-Because of this, the LM741 model was used instead.
+* incorrect or simplified model
+* limitations of simulation
 
 ---
 
-## 🎸 Audio Effects
+## 📦 Model Information
 
-### Fuzz Effect
+Used model:
 
-![Image](https://d6a2e7ghqts3o.cloudfront.net/AcuCustom/Sitename/DAM/519/2020GPXSymmetricalAsymmetricalClippingCircuit700.jpg)
+* https://www.ti.com/product/LM741
+* https://www.ti.com/lit/zip/snom211
 
-![Image](https://media.sweetwater.com/m/insync/2022/07/Boost-Overdrive-Distortion-Fuzz-Figure-02-scaled.jpg)
+⚠️ UA741 model (not working):
+
+* https://www.ti.com/product/UA741
+* https://www.ti.com/lit/zip/sloj138
+
+LM741 was used because UA741 model failed.
+
+---
+
+# 🎸 Fuzz Effect
+
+![schematic](images/LTspice/fuzz_effect_schematic.png)
+![response](images/LTspice/fuzz_effect_response.png)
+
+![hardware](images/hardware/fuzz_effect.png)
+![scope](images/hardware-oscilloscope/fuzz_effect.png)
+![fft](images/hardware-oscilloscope/fuzz_effect_fft.png)
 
 * Strong nonlinear distortion
-* Signal clipping using diodes
+* Diode clipping
 * Very high THD (>200%)
 
-This distortion is intentional and produces the characteristic guitar fuzz sound.
+Expected behavior for fuzz effect.
 
 ---
 
-### Noise Gate
+# 🔇 Noise Gate
 
-![Image](https://ro-che.info/img/better-noise-gate/fig1.png)
+![schematic](images/LTspice/noise_gate_schematic.png)
+![response](images/LTspice/noise_gate_response.png)
 
-![Image](https://www.eevblog.com/forum/testgear/oscilloscope-input-noise-comparison/?action=dlattach%3Battach%3D546428%3Bimage)
-
-* Reduces noise and unwanted signals
-* Output signal closely follows input
+* Reduces noise
+* Output follows input
 * Slight attenuation
 
-The circuit effectively suppresses low-level noise without heavily distorting the signal.
+---
+
+# 🧠 Conclusions
+
+* Filters behave exactly as theory predicts
+* Transistor amplifiers show realistic distortion
+* Feedback improves bandwidth but affects THD
+* Op-amp results may be affected by model inaccuracies
+* Audio effects behave as expected
 
 ---
 
-# 📊 Measurements
-
-Oscilloscope results:
-
-```text
-images/hardware-oscilloscope/
-```
-
-Include:
-
-* time-domain signals
-* FFT analysis
-
----
-
-# 🔬 Conclusions
-
-* LTspice simulations closely match theoretical expectations for filters
-* Transistor amplifiers show realistic distortion behavior
-* Negative feedback improves bandwidth but reduces gain
-* Op-amp simulation results may be affected by model inaccuracies
-* Audio effects (fuzz, noise gate) behave as expected
-
----
-
-# 🧠 Author
+# 👤 Author
 
 Hubert Jabłoński
 
