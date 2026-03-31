@@ -4,6 +4,31 @@ This project presents analog audio circuits simulated in **LTspice XVII** and ve
 
 ---
 
+# 🎧 Audio Comparison (Simulation vs Real Guitar)
+
+To evaluate the circuits, a comparison between simulation and real audio was performed.
+
+The comparison includes:
+
+- LTspice simulation (input.wav)
+- real guitar signal
+
+👉 https://hubjab21.github.io/
+
+⚠️ Note:
+
+Only **one sound sample** was directly compared with a real guitar signal.  
+The remaining results presented on the website are based on **LTspice simulations only**.
+
+This allows:
+
+- validation of simulation against real-world behavior (for one case)  
+- presentation of multiple circuit responses using simulation  
+
+The results show how closely simulation can represent real audio, while also highlighting the limitations of purely simulated analysis.
+
+---
+
 ## ⚠️ LTspice Version
 
 Simulations were performed using:
