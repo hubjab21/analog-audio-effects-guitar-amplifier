@@ -43,8 +43,8 @@ Simulations were performed using:
 
 In all LTspice plots:
 
-🟢 **Green = Input signal** <br>
-🔴 **Red = Output signal** <br>
+🟢 Input signal (green) <br>
+🔴 Output signal (red) <br>
 
 In oscilloscope measurements: 
 
