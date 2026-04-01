@@ -43,14 +43,14 @@ Simulations were performed using:
 
 In all LTspice plots:
 
-🟢 **Green = Input signal** 
-🔴 **Red = Output signal**
+🟢 **Green = Input signal** <br>
+🔴 **Red = Output signal** <br>
 
 In oscilloscope measurements: 
 
-🟡 Input (yellow) 
-🔵 Output (blue)
-🔴 FFT - frequency domain (red)
+🟡 Input (yellow) <br>
+🔵 Output (blue) <br>
+🔴 FFT - frequency domain (red) <br>
 
 ---
 
