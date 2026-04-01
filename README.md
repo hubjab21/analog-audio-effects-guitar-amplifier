@@ -1,10 +1,10 @@
-# 🎛️ Analog Audio Circuits – LTspice & Hardware
+# Analog Audio Circuits – LTspice & Hardware
 
-This project presents analog audio circuits simulated in **LTspice XVII** and verified using real hardware measurements.
+This project presents a set of analog audio circuits designed and analyzed in LTspice XVII and verified using real hardware measurements.
 
 ---
 
-# 🎧 Audio Comparison (Simulation vs Real Guitar)
+## Audio comparison (simulation vs real guitar)
 
 To evaluate the circuits, a comparison between simulation and real audio was performed.
 
@@ -13,225 +13,226 @@ The comparison includes:
 - LTspice simulation (input.wav)
 - real guitar signal
 
-👉 https://hubjab21.github.io/
+Link:
+https://hubjab21.github.io/
 
-⚠️ Note:
+Note:
 
-Only **one sound sample** was directly compared with a real guitar signal.  
-The remaining results presented on the website are based on **LTspice simulations only**.
+Only one sound sample was directly compared with a real guitar signal.
+All other results presented on the website are based on LTspice simulations.
 
 This allows:
 
-- validation of simulation against real-world behavior (for one case)  
-- presentation of multiple circuit responses using simulation  
+- basic validation of simulation against real behavior (for one case)
+- comparison of multiple circuits using simulation results
 
-The results show how closely simulation can represent real audio, while also highlighting the limitations of purely simulated analysis.
+The results show that simulation can approximate real audio behavior, but also highlight its limitations.
 
 ---
 
-## ⚠️ LTspice Version
+## LTspice version
 
 Simulations were performed using:
 
-* ✅ LTspice XVII (working)
-* ❌ LTspice 26 – issues with `.wav` generation
+- LTspice XVII (working correctly)
+- LTspice 26 – issues with `.wav` generation
 
 ---
 
-## 🎨 Plot Colors
+## Plot colors
 
 In all LTspice plots:
 
-* 🟢 **Green = Input signal**
-* 🔴 **Red = Output signal**
+- 🟢 **Green = Input signal** 
+- 🔴 **Red = Output signal**
 
-In oscilloscope measurements:
-
-* 🟡 Input (yellow)
-* 🔵 Output (blue)
+In oscilloscope measurements: 
+- 🟡 Input (yellow) 
+- 🔵 Output (blue)
+- 🔴 FFT - frequency domain (red)
 
 ---
 
-# 🔼 High-Pass Filter
+## High-pass filter
 
 ![schematic](images/LTspice/high_pass_filter_schematic.png)
 ![response](images/LTspice/high_pass_filter_response.png)
 
-Simple RC filter that removes low frequencies and passes high frequencies.
+Simple RC filter that removes low-frequency components.
 
 ---
 
-# 🔽 Low-Pass Filter
+## Low-pass filter
 
 ![schematic](images/LTspice/low_pass_filter_schematic.png)
 ![response](images/LTspice/low_pass_filter_response.png)
 
-Simple RC filter that passes low frequencies and attenuates high frequencies.
+Simple RC filter that attenuates high-frequency components.
 
 ---
 
-# 🔊 Single Transistor Voltage Amplifier
+## Single transistor voltage amplifier
 
 ![schematic](images/LTspice/single_transistor_voltage_amplifier_schematic.png)
 ![response](images/LTspice/single_transistor_voltage_amplifier_response.png)
 
 Common-emitter amplifier (BC337).
 
-* voltage gain
-* phase inversion
-* distortion for higher amplitudes
+- voltage gain
+- phase inversion
+- distortion at higher amplitudes
 
-### 🔌 Breadboard circuit (prototype)
+### Breadboard prototype
 
 ![breadboard](images/hardware/single_transistor_voltage_amplifier_breadboard.png)
 
-The circuit was first implemented on a **breadboard**.  
-A signal generator was used as the input source, allowing initial verification and debugging of the circuit.
+The circuit was first implemented on a breadboard and tested using a signal generator.
 
 At this stage:
 
-- basic functionality was tested  
-- wiring and connections were verified  
-- issues such as poor contacts were identified and fixed  
+- basic functionality was verified
+- wiring and connections were checked
+- contact issues were identified and corrected
 
 ---
 
-### 🔧 Physical circuit (final hardware)
+### Final hardware implementation
 
 ![hardware](images/hardware/single_transistor_voltage_amplifier.png)
 
-After successful testing:
+After initial testing:
 
-- corrections were introduced in LTspice  
-- the design was refined  
-- and the circuit was **soldered on a universal PCB**
+- the LTspice model was corrected
+- the design was refined
+- the circuit was soldered on a universal PCB
 
-This workflow (LTspice → breadboard → corrections → PCB) was used for the other circuits as well, even if additional breadboard photos are not included.
+The same workflow was used for other circuits.
 
-### 📊 Oscilloscope measurements
+---
+
+### Oscilloscope measurements
 
 ![scope](images/hardware-oscilloscope/single_transistor_voltage_amplifier.png)
 ![fft](images/hardware-oscilloscope/single_transistor_voltage_amplifier_fft.png)
 
-* real gain lower than simulation
-* clipping appears at higher amplitudes
-* harmonic distortion visible in FFT
+- real gain lower than in simulation
+- clipping appears at higher amplitudes
+- harmonic distortion visible in FFT
 
 ---
 
-# 🔊 Amplifier with Negative Feedback
+## Amplifier with negative feedback
 
 ![schematic](images/LTspice/single_transistor_voltage_amplifier_negative_feedback_schematic.png)
 ![response](images/LTspice/single_transistor_voltage_amplifier_negative_feedback_response.png)
 
 Amplifier with feedback:
 
-* lower gain
-* better stability
-* wider bandwidth
+- lower gain
+- improved stability
+- wider bandwidth
 
-### 🔧 Physical circuit (hardware)
+### Hardware implementation
 
 ![hardware](images/hardware/single_transistor_voltage_amplifier_negative_feedback.png)
 
-The same workflow was used:
+Workflow:
 
-* LTspice simulation
-* breadboard testing
-* corrections in simulation
-* final soldered version
+- LTspice simulation
+- breadboard testing
+- model corrections
+- final PCB version
 
-### 📊 Oscilloscope measurements
+### Oscilloscope measurements
 
 ![scope](images/hardware-oscilloscope/single_transistor_voltage_amplifier_negative_feedback.png)
 ![fft](images/hardware-oscilloscope/single_transistor_voltage_amplifier_negative_feedback_fft.png)
 
-Simulation and real results differ slightly → likely due to model simplifications.
+Simulation and measurements differ slightly, most likely due to model simplifications.
 
 ---
 
-# 🔧 Operational Amplifier (LM741 / UA741)
+## Operational amplifier (LM741 / UA741)
 
 ![schematic](images/LTspice/lm741_amplifier_schematic.png)
 
-* Simulation: **LM741**
-* Hardware: **UA741 (similar chip)**
+- simulation: LM741
+- hardware: UA741
 
-⚠️ UA741 model did not work correctly in LTspice → LM741 used instead
+UA741 model was not usable in LTspice, so LM741 was used instead.
 
-### 🔧 Physical circuit (hardware)
+### Hardware implementation
 
 ![hardware](images/hardware/UA741_amplifier.png)
 
-This circuit was implemented physically using UA741 after simulation.
+Circuit implemented and tested using UA741.
 
-### 📊 Oscilloscope measurements
+### Oscilloscope measurements
 
 ![scope](images/hardware-oscilloscope/ua741_amplifier.png)
 ![fft](images/hardware-oscilloscope/ua741_amplifier_fft.png)
 
-* stable amplification
-* low distortion
-* best agreement between simulation and hardware
+- stable amplification
+- low distortion
+- best agreement between simulation and hardware
 
 ---
 
-# 🎸 Fuzz Effect
+## Fuzz effect
 
 ![schematic](images/LTspice/fuzz_effect_schematic.png)
 ![response](images/LTspice/fuzz_effect_response.png)
 
-* strong nonlinear distortion
-* diode clipping
-* very high harmonic content
+- strong nonlinear distortion
+- diode clipping
+- high harmonic content
 
-### 🔧 Physical circuit (hardware)
+### Hardware implementation
 
 ![hardware](images/hardware/fuzz_effect.png)
 
-Circuit implemented after LTspice validation and tested as a standalone audio effect.
+Circuit tested as a standalone audio effect.
 
-### 📊 Oscilloscope measurements
+### Oscilloscope measurements
 
 ![scope](images/hardware-oscilloscope/fuzz_effect.png)
 ![fft](images/hardware-oscilloscope/fuzz_effect_fft.png)
 
-Real circuit behaves similarly to simulation.
+Measured response is close to simulation.
 
 ---
 
-# 🔇 Noise Gate
+## Noise gate
 
 ![schematic](images/LTspice/noise_gate_schematic.png)
 ![response](images/LTspice/noise_gate_response.png)
 
-* suppresses noise
-* reduces low-level signals
-* keeps main signal shape
+- suppresses noise
+- attenuates low-level signals
+- preserves main signal shape
 
 ---
 
-# 🔬 Conclusions
+## Conclusions
 
-* filters behave exactly as expected
-* transistor amplifiers differ from simulation
-* feedback improves stability
-* op-amp gives most predictable results
-* real measurements are essential
-
----
-
-# 🚀 Future Development
-
-* design circuits in **KiCad**
-* create **dedicated PCB boards** (instead of universal)
-* improve build quality
-* perform more real measurements
-* extend audio effects
+- filters behave as expected
+- transistor amplifiers differ from simulation
+- feedback improves stability
+- operational amplifier gives the most predictable results
+- real measurements are necessary
 
 ---
 
-# 👤 Author
+## Future development
+
+- design circuits in KiCad
+- create dedicated PCB boards
+- improve build quality
+- perform more measurements
+- extend audio effects
+
+---
+
+## Author
 
 Hubert Jabłoński
-
