@@ -35,7 +35,12 @@ The results show that simulation can approximate real audio behavior, but also h
 Simulations were performed using:
 
 - LTspice XVII (working correctly)
-- LTspice 26 – issues with `.wav` generation
+- LTspice 26 – issues with `.wav` generation 
+
+Both versions are available from the Analog Devices website: <br>
+https://www.analog.com/en/resources/design-tools-and-calculators/ltspice-simulator.html <br><br> 
+
+The main page provides access to LTspice 26, while LTspice XVII is available in the downloads section (access verified on 02.04.2026).
 
 ---
 
