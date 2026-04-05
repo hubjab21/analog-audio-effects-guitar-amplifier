@@ -212,13 +212,14 @@ Measured response is close to simulation.
 
 ![schematic](images/LTspice/noise_gate_schematic.png)
 ![response](images/LTspice/noise_gate_response.png)
+![3D PCB](images/kicad/noise-gate.png)
 
-- suppresses noise
-- attenuates low-level signals
-- preserves main signal shape
+- suppresses noise 
+- attenuates low-level signals 
+- preserves main signal shape 
 
----
-
+A production-ready PCB has been designed in KiCad. 
+All necessary manufacturing files (Gerbers) are included in this repository.
 ## Conclusions
 
 - filters behave as expected
