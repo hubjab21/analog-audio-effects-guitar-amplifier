@@ -186,12 +186,18 @@ Circuit implemented and tested using UA741.
 
 ## Fuzz effect
 
+## Fuzz effect
+
 ![schematic](images/LTspice/fuzz_effect_schematic.png)
 ![response](images/LTspice/fuzz_effect_response.png)
+![KiCad schematic](images/kicad/fuzz-effect-schematic.png)
+![3D PCB](images/kicad/fuzz-effect-3d.png)
 
-- strong nonlinear distortion
-- diode clipping
-- high harmonic content
+- strong nonlinear distortion 
+- diode clipping 
+- high harmonic content 
+
+A PCB design has been created in KiCad, including both schematic and 3D visualization.
 
 ### Hardware implementation
 
@@ -212,7 +218,8 @@ Measured response is close to simulation.
 
 ![schematic](images/LTspice/noise_gate_schematic.png)
 ![response](images/LTspice/noise_gate_response.png)
-![3D PCB](images/kicad/noise-gate.png)
+![KiCad schematic](images/kicad/noise-gate-schematic.png)
+![3D PCB](images/kicad/noise-gate-3d.png)
 
 - suppresses noise 
 - attenuates low-level signals 
