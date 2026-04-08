@@ -81,6 +81,8 @@ Simple RC filter that attenuates high-frequency components.
 
 ![schematic](images/LTspice/single_transistor_voltage_amplifier_schematic.png)
 ![response](images/LTspice/single_transistor_voltage_amplifier_response.png)
+![KiCad schematic](images/kicad/single-transistor-voltage-amplifier-schematic.png)
+![3D PCB](images/kicad/single-transistor-voltage-amplifier-3d.png)
 
 Common-emitter amplifier (BC337).
 
@@ -91,6 +93,7 @@ Common-emitter amplifier (BC337).
 ### Breadboard prototype
 
 ![breadboard](images/hardware/single_transistor_voltage_amplifier_breadboard.png)
+
 
 The circuit was first implemented on a breadboard and tested using a signal generator.
 
@@ -183,8 +186,6 @@ Circuit implemented and tested using UA741.
 - best agreement between simulation and hardware
 
 ---
-
-## Fuzz effect
 
 ## Fuzz effect
 

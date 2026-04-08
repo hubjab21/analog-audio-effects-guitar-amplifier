@@ -451,7 +451,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "fuzz-effect.kicad_pro",
+    "filename": "single-transistor-voltage-amplifier.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -611,7 +611,7 @@
   },
   "sheets": [
     [
-      "87957a9d-25ed-4023-b9db-8ea0a413a172",
+      "5e41f121-57a3-4db6-a68b-c38648245487",
       "Root"
     ]
   ],
