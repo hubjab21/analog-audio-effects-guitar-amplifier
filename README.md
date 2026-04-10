@@ -134,6 +134,8 @@ The same workflow was used for other circuits.
 
 ![schematic](images/LTspice/single_transistor_voltage_amplifier_negative_feedback_schematic.png)
 ![response](images/LTspice/single_transistor_voltage_amplifier_negative_feedback_response.png)
+![KiCad schematic](images/kicad/single-transistor-voltage-amplifier-schematic.png)
+![3D PCB](images/kicad/single-transistor-voltage-amplifier-3d.png)
 
 Amplifier with feedback:
 

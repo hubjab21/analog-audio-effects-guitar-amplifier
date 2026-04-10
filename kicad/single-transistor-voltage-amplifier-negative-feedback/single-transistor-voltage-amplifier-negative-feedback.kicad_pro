@@ -451,7 +451,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "fuzz-effect.kicad_pro",
+    "filename": "single-transistor-voltage-amplifier.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -560,36 +560,12 @@
           "label": "Datasheet",
           "name": "Datasheet",
           "show": true
-        },
-        {
-          "group_by": false,
-          "label": "Sim.Pins",
-          "name": "Sim.Pins",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Sim.Device",
-          "name": "Sim.Device",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Description",
-          "name": "Description",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "#",
-          "name": "${ITEM_NUMBER}",
-          "show": false
         }
       ],
       "filter_string": "",
       "group_symbols": true,
       "include_excluded_from_bom": true,
-      "name": "",
+      "name": "Default Editing",
       "sort_asc": true,
       "sort_field": "Reference"
     },
@@ -635,7 +611,7 @@
   },
   "sheets": [
     [
-      "87957a9d-25ed-4023-b9db-8ea0a413a172",
+      "5e41f121-57a3-4db6-a68b-c38648245487",
       "Root"
     ]
   ],

@@ -2073,18 +2073,17 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "28c6e403-b92c-4887-9ae1-76633a899b95")
 		(property "Reference" "R4"
-			(at 100.33 40.64 90)
+			(at 100.33 44.45 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "R"
-			(at 100.33 43.18 90)
+		(property "Value" "51k"
+			(at 100.33 49.276 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2152,7 +2151,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "22u"
 			(at 93.98 80.0099 0)
 			(effects
 				(font
@@ -2222,7 +2221,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "10n"
 			(at 86.36 63.4999 0)
 			(effects
 				(font
@@ -2292,7 +2291,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "10n"
 			(at 73.66 76.1999 0)
 			(effects
 				(font
@@ -2454,7 +2453,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "100k"
 			(at 88.646 54.356 90)
 			(effects
 				(font
@@ -2589,7 +2588,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "470"
 			(at 104.14 80.0099 0)
 			(effects
 				(font
@@ -2732,7 +2731,7 @@
 				)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "100n"
 			(at 62.23 58.42 90)
 			(effects
 				(font
@@ -2801,7 +2800,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "100n"
 			(at 73.66 50.7999 0)
 			(effects
 				(font
@@ -3097,7 +3096,7 @@
 				)
 			)
 		)
-		(property "Value" "R"
+		(property "Value" "100k"
 			(at 75.946 54.356 90)
 			(effects
 				(font
@@ -3155,18 +3154,17 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "e6a02b70-3431-491d-86e9-3c6451605dc9")
 		(property "Reference" "C5"
-			(at 99.06 53.34 90)
+			(at 98.806 56.896 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "C"
-			(at 99.06 55.88 90)
+		(property "Value" "100n"
+			(at 99.06 65.024 90)
 			(effects
 				(font
 					(size 1.27 1.27)

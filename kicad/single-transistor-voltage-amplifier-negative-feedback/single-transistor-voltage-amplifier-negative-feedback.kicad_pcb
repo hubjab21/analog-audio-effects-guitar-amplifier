@@ -94,7 +94,7 @@
 	(footprint "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P1.90mm_Vertical"
 		(layer "F.Cu")
 		(uuid "0040a114-0a61-4fe9-b15d-00329ed56215")
-		(at 139 86.095 -90)
+		(at 138 86.095 -90)
 		(descr "Resistor, Axial_DIN0204 series, Axial, Vertical, pin pitch=1.9mm, 0.167W, length*diameter=3.6*1.6mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
 		(tags "Resistor Axial_DIN0204 series Axial Vertical pin pitch 1.9mm 0.167W length 3.6mm diameter 1.6mm")
 		(property "Reference" "R2"
@@ -108,7 +108,7 @@
 				)
 			)
 		)
-		(property "Value" "100k"
+		(property "Value" "470k"
 			(at 0.95 1.92 90)
 			(layer "F.Fab")
 			(uuid "2f8d58a6-749c-491f-b630-dd9ac9f28c72")
@@ -146,7 +146,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/5d9325ac-748e-4a08-adc0-7e5241f8cddf")
 		(sheetname "/")
-		(sheetfile "single-transistor-voltage-amplifier.kicad_sch")
+		(sheetfile "single-transistor-voltage-amplifier-negative-feedback.kicad_sch")
 		(attr through_hole)
 		(fp_arc
 			(start 0.417133 0.82)
@@ -238,7 +238,7 @@
 	(footprint "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P1.90mm_Vertical"
 		(layer "F.Cu")
 		(uuid "2e704341-37f9-4c90-b0aa-790a694dd21e")
-		(at 146 86.095 -90)
+		(at 148.5 86.095 -90)
 		(descr "Resistor, Axial_DIN0204 series, Axial, Vertical, pin pitch=1.9mm, 0.167W, length*diameter=3.6*1.6mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
 		(tags "Resistor Axial_DIN0204 series Axial Vertical pin pitch 1.9mm 0.167W length 3.6mm diameter 1.6mm")
 		(property "Reference" "R3"
@@ -252,7 +252,7 @@
 				)
 			)
 		)
-		(property "Value" "4.7k"
+		(property "Value" "5.1k"
 			(at 0.95 1.92 90)
 			(layer "F.Fab")
 			(uuid "a8a7d752-3759-476b-aa22-d6c6102217ac")
@@ -290,7 +290,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/9264a3f1-15dc-4643-8c3c-1e4da579f0dc")
 		(sheetname "/")
-		(sheetfile "single-transistor-voltage-amplifier.kicad_sch")
+		(sheetfile "single-transistor-voltage-amplifier-negative-feedback.kicad_sch")
 		(attr through_hole)
 		(fp_arc
 			(start 0.417133 0.82)
@@ -436,7 +436,7 @@
 		(property ki_fp_filters "Jack*")
 		(path "/f70108fb-97f1-45fa-9d92-718e99206f50")
 		(sheetname "/")
-		(sheetfile "single-transistor-voltage-amplifier.kicad_sch")
+		(sheetfile "single-transistor-voltage-amplifier-negative-feedback.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -7.07 3.645)
@@ -857,7 +857,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/0358e8f1-c937-470f-b09c-f5a7db66f59d")
 		(sheetname "/")
-		(sheetfile "single-transistor-voltage-amplifier.kicad_sch")
+		(sheetfile "single-transistor-voltage-amplifier-negative-feedback.kicad_sch")
 		(attr through_hole)
 		(fp_arc
 			(start 0.417133 0.82)
@@ -1001,7 +1001,7 @@
 		(property ki_fp_filters "TerminalBlock*:*")
 		(path "/46649de5-7598-402c-80c3-45f89410bcf4")
 		(sheetname "/")
-		(sheetfile "single-transistor-voltage-amplifier.kicad_sch")
+		(sheetfile "single-transistor-voltage-amplifier-negative-feedback.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -3.12 -4.12)
@@ -1372,7 +1372,7 @@
 				)
 			)
 		)
-		(property "Value" "3.3k"
+		(property "Value" "4.7k"
 			(at 0.95 1.92 0)
 			(layer "F.Fab")
 			(uuid "7af04fbd-b7a8-4949-be6f-ea203f606adb")
@@ -1410,7 +1410,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/56ffb845-153a-4a8b-9c11-a9a543a989c4")
 		(sheetname "/")
-		(sheetfile "single-transistor-voltage-amplifier.kicad_sch")
+		(sheetfile "single-transistor-voltage-amplifier-negative-feedback.kicad_sch")
 		(attr through_hole)
 		(fp_arc
 			(start 0.417133 0.82)
@@ -1506,7 +1506,7 @@
 		(descr "M Series, 6.35mm (1/4in) mono jack, switched, with a half threaded nose and offset PCB pins, https://www.neutrik.com/en/product/nmj4hhd2")
 		(tags "neutrik jack m")
 		(property "Reference" "J1"
-			(at -2.4 -5.885 0)
+			(at -0.025 19.615 0)
 			(layer "F.SilkS")
 			(uuid "7288494f-aa9a-411b-b8f1-cc0fecbd09cb")
 			(effects
@@ -1556,7 +1556,7 @@
 		(property ki_fp_filters "Jack*")
 		(path "/6f41c3ce-ef9c-4ebb-9264-912427b6bb9c")
 		(sheetname "/")
-		(sheetfile "single-transistor-voltage-amplifier.kicad_sch")
+		(sheetfile "single-transistor-voltage-amplifier-negative-feedback.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start 26.02 13.735)
@@ -1939,7 +1939,7 @@
 				)
 			)
 		)
-		(property "Value" "4.7k"
+		(property "Value" "5.1k"
 			(at 0.95 1.92 0)
 			(layer "F.Fab")
 			(uuid "5fc457ee-fb9a-4a59-80e6-cc47e58a8e58")
@@ -1977,7 +1977,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/16c0ab07-7cca-4ca0-8121-2a958c9058f7")
 		(sheetname "/")
-		(sheetfile "single-transistor-voltage-amplifier.kicad_sch")
+		(sheetfile "single-transistor-voltage-amplifier-negative-feedback.kicad_sch")
 		(attr through_hole)
 		(fp_arc
 			(start 0.417133 0.82)
@@ -2121,7 +2121,7 @@
 		(property ki_fp_filters "R_*")
 		(path "/e75f0fd1-ccfb-451d-8874-2361614b8c4a")
 		(sheetname "/")
-		(sheetfile "single-transistor-voltage-amplifier.kicad_sch")
+		(sheetfile "single-transistor-voltage-amplifier-negative-feedback.kicad_sch")
 		(attr through_hole)
 		(fp_arc
 			(start 0.417133 0.82)
@@ -2265,7 +2265,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/e2fb1e08-6972-44db-8d25-a08e3af89c42")
 		(sheetname "/")
-		(sheetfile "single-transistor-voltage-amplifier.kicad_sch")
+		(sheetfile "single-transistor-voltage-amplifier-negative-feedback.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.37 -1.12)
@@ -2448,7 +2448,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/2c2dd619-82da-4286-8fd1-b505888f1d4c")
 		(sheetname "/")
-		(sheetfile "single-transistor-voltage-amplifier.kicad_sch")
+		(sheetfile "single-transistor-voltage-amplifier-negative-feedback.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.37 1.12)
@@ -2631,7 +2631,7 @@
 		(property ki_fp_filters "C_*")
 		(path "/6fa07161-a6c3-4a27-9540-4bacbbd3cd7e")
 		(sheetname "/")
-		(sheetfile "single-transistor-voltage-amplifier.kicad_sch")
+		(sheetfile "single-transistor-voltage-amplifier-negative-feedback.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.37 -1.12)
@@ -2842,7 +2842,7 @@
 		(property ki_fp_filters "TO?92*")
 		(path "/7bcfd9f3-977d-4836-ad91-cb396c4bf9e3")
 		(sheetname "/")
-		(sheetfile "single-transistor-voltage-amplifier.kicad_sch")
+		(sheetfile "single-transistor-voltage-amplifier-negative-feedback.kicad_sch")
 		(attr through_hole)
 		(fp_line
 			(start -0.53 1.85)
@@ -3005,6 +3005,150 @@
 			)
 		)
 	)
+	(footprint "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P1.90mm_Vertical"
+		(layer "F.Cu")
+		(uuid "f1707510-fdf2-4dd6-8f87-8acf0b2688b0")
+		(at 141.6 88)
+		(descr "Resistor, Axial_DIN0204 series, Axial, Vertical, pin pitch=1.9mm, 0.167W, length*diameter=3.6*1.6mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
+		(tags "Resistor Axial_DIN0204 series Axial Vertical pin pitch 1.9mm 0.167W length 3.6mm diameter 1.6mm")
+		(property "Reference" "R7"
+			(at 0.95 -1.92 0)
+			(layer "F.SilkS")
+			(uuid "eeb4c4ab-ea74-4acd-a428-7a99ae2800a9")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 0.95 1.92 0)
+			(layer "F.Fab")
+			(uuid "2eac1fee-c88f-4b4f-a178-8a6195f291a0")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f467fc41-56c2-4973-9dcc-8525b5d8c257")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9608e6f6-3274-4047-8c69-a5a48603e4f0")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property ki_fp_filters "R_*")
+		(path "/f900f1e4-b627-4755-9f12-dc132aa5860b")
+		(sheetname "/")
+		(sheetfile "single-transistor-voltage-amplifier-negative-feedback.kicad_sch")
+		(attr through_hole)
+		(fp_arc
+			(start 0.417133 0.82)
+			(mid -0.92 0)
+			(end 0.417133 -0.82)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "91337f62-0d60-43cd-a75a-0c7756c0b86a")
+		)
+		(fp_rect
+			(start -1.05 -1.05)
+			(end 2.86 1.05)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "58c9a24c-5d97-4b74-844f-6d50c0f76e53")
+		)
+		(fp_line
+			(start 0 0)
+			(end 1.9 0)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "05036c73-6ae1-438b-8995-482b68a02113")
+		)
+		(fp_circle
+			(center 0 0)
+			(end 0.8 0)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.Fab")
+			(uuid "768a49e8-aa3c-45de-bfa1-6265d5658e1c")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0.95 -1.92 0)
+			(layer "F.Fab")
+			(uuid "93d829a5-8e79-413e-8407-1ba8ae50e79b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 1.4 1.4)
+			(drill 0.7)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 2 "Net-(Q1-B)")
+			(pintype "passive")
+			(uuid "e79cd5bd-2298-4040-bda3-db15b4cbf4df")
+		)
+		(pad "2" thru_hole circle
+			(at 1.9 0)
+			(size 1.4 1.4)
+			(drill 0.7)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 3 "Net-(Q1-C)")
+			(pintype "passive")
+			(uuid "5b56b707-49ff-4289-9245-ea7c089d7990")
+		)
+		(embedded_fonts no)
+		(model "${KICAD9_3DMODEL_DIR}/Resistor_THT.3dshapes/R_Axial_DIN0204_L3.6mm_D1.6mm_P1.90mm_Vertical.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+	)
 	(gr_rect
 		(start 99.5 66.5)
 		(end 198.5 106)
@@ -3053,6 +3197,22 @@
 		(uuid "1886539b-d1c4-443b-9942-5742a56137d7")
 	)
 	(segment
+		(start 138.005 88)
+		(end 138 87.995)
+		(width 0.2)
+		(layer "B.Cu")
+		(net 2)
+		(uuid "43f3cf02-3eb0-4d56-b624-aa2d1197d4fd")
+	)
+	(segment
+		(start 141.6 88)
+		(end 138.005 88)
+		(width 0.2)
+		(layer "B.Cu")
+		(net 2)
+		(uuid "b12490ea-95be-4120-850d-007faffca3c2")
+	)
+	(segment
 		(start 131 96.5)
 		(end 131 101.095)
 		(width 0.2)
@@ -3069,44 +3229,68 @@
 		(uuid "ce89071c-f3ca-4212-9a04-c0d666efc37a")
 	)
 	(segment
-		(start 139 88.5)
-		(end 139 87.995)
+		(start 138 89.5)
+		(end 131 96.5)
 		(width 0.2)
 		(layer "B.Cu")
 		(net 2)
-		(uuid "d9931b59-f41f-4844-a662-38c3ed93c14b")
+		(uuid "ea9950a1-3e16-4dd2-8323-3bdb3bebd1e6")
 	)
 	(segment
-		(start 131 96.5)
-		(end 139 88.5)
+		(start 138 87.995)
+		(end 138 89.5)
 		(width 0.2)
 		(layer "B.Cu")
 		(net 2)
-		(uuid "dcf06f14-c117-4973-bca6-417ada5d3e41")
+		(uuid "f45e0d06-408a-4673-8663-716e40e8ed15")
 	)
 	(segment
-		(start 141.64 94.73)
-		(end 141.64 92.355)
+		(start 143.5 88)
+		(end 143.5 92.87)
 		(width 0.2)
 		(layer "B.Cu")
 		(net 3)
-		(uuid "0199c97a-3070-43d9-a5b4-f52800199dcc")
+		(uuid "1333815a-97e2-47f9-a408-925aba6dc526")
 	)
 	(segment
-		(start 146 87.995)
-		(end 151.745 87.995)
+		(start 143.5 92.87)
+		(end 141.64 94.73)
 		(width 0.2)
 		(layer "B.Cu")
 		(net 3)
-		(uuid "1e5521b2-326d-4c69-9a3e-088a18ba6b5a")
+		(uuid "5d9b9a84-b3d6-4ff1-90f4-56644d63ee0b")
 	)
 	(segment
-		(start 141.64 92.355)
-		(end 146 87.995)
+		(start 151.75 88)
+		(end 148.505 88)
 		(width 0.2)
 		(layer "B.Cu")
 		(net 3)
-		(uuid "5e2e55a6-872e-4f37-998e-8ff79bf09312")
+		(uuid "6c1f9072-7a8a-424b-8c2e-b606f4dcb1cc")
+	)
+	(segment
+		(start 148.495 88)
+		(end 148.5 87.995)
+		(width 0.2)
+		(layer "B.Cu")
+		(net 3)
+		(uuid "774bca13-632e-4f46-9173-450780894620")
+	)
+	(segment
+		(start 148.505 88)
+		(end 148.5 87.995)
+		(width 0.2)
+		(layer "B.Cu")
+		(net 3)
+		(uuid "c79f9dfb-4be2-4b94-93b9-d84b93d2c1e1")
+	)
+	(segment
+		(start 143.5 88)
+		(end 148.495 88)
+		(width 0.2)
+		(layer "B.Cu")
+		(net 3)
+		(uuid "d5e0991f-7970-4f08-89a2-db3a1386789b")
 	)
 	(segment
 		(start 151.745 87.995)
@@ -3317,28 +3501,28 @@
 		(uuid "f8a4bf02-4b2a-491a-acb8-e5c29d1b04e5")
 	)
 	(segment
-		(start 139 86.095)
-		(end 146 86.095)
+		(start 148.5 86.095)
+		(end 148.5 77)
 		(width 0.2)
 		(layer "B.Cu")
 		(net 13)
-		(uuid "6920f36c-40fd-4c6b-8b57-72573fa88cbc")
+		(uuid "2dd1f1c5-93be-401d-a432-fdf2cc36967b")
 	)
 	(segment
-		(start 147.5 76)
-		(end 147.5 84.595)
+		(start 148.5 77)
+		(end 147.5 76)
 		(width 0.2)
 		(layer "B.Cu")
 		(net 13)
-		(uuid "7616c573-29b0-4b3a-a7b0-a8667ed7b131")
+		(uuid "c59834dc-5ad7-4373-ad39-da6e35e6cbf8")
 	)
 	(segment
-		(start 147.5 84.595)
-		(end 146 86.095)
+		(start 138 86.095)
+		(end 148.5 86.095)
 		(width 0.2)
 		(layer "B.Cu")
 		(net 13)
-		(uuid "ab93e43f-1aaa-4dc2-94be-0832c231665a")
+		(uuid "fbf58604-67fd-45dd-892b-930c40646b5c")
 	)
 	(embedded_fonts no)
 )
