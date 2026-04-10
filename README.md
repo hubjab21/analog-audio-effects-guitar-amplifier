@@ -166,11 +166,15 @@ Simulation and measurements differ slightly, most likely due to model simplifica
 ## Operational amplifier (LM741 / UA741)
 
 ![schematic](images/LTspice/lm741_amplifier_schematic.png)
+![KiCad schematic](images/kicad/lm741-amplifier-schematic.png)
+![3D PCB](images/kicad/lm741-amplifier-3d.png)
 
 - simulation: LM741
 - hardware: UA741
 
 UA741 model was not usable in LTspice, so LM741 was used instead.
+
+For a classical guitar amplifier, it is recommended to increase **R2** from 68kΩ to around 200kΩ, or alternatively decrease **R1** from 20kΩ, in order to achieve higher input sensitivity and better signal amplification.
 
 ### Hardware implementation
 
